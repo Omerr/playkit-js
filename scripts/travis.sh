@@ -7,9 +7,6 @@ set -ev
 elif [ "${TRAVIS_MODE}" = "flow" ]; then
   yarn run flow
 elif [ "${TRAVIS_MODE}" = "unitTests" ]; then
-	echo $TRAVIS_BRANCH
-  exit 33
-	curl -d "{\"branch\":\"$TRAVIS_BRANCH\", \"status\":\"running\"}" -H 'Content-Type:application/json' -X POST https://magic.swimm.io/bitbucket_update
 	yarn run test
 elif [ "${TRAVIS_MODE}" = "release" ] || [ "${TRAVIS_MODE}" = "releaseCanary" ]; then
   if [ "${TRAVIS_MODE}" = "releaseCanary" ]; then
