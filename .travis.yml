@@ -25,7 +25,7 @@ before_script:
 script: 
   - ./scripts/travis.sh
   
-after_script
+after_script:
   - curl -d "{\"branch\":\"$TRAVIS_BRANCH\", \"status\":\"$TRAVIS_TEST_RESULT\"}" -H 'Content-Type:application/json' -X POST https://magic.swimm.io/bitbucket_update 
 
 stages:
