@@ -197,7 +197,7 @@ const CustomEventType: PKEventTypes = {
   /**
    * Fires when the text track style has changed.
    */
-  /* Swimm: TBD - add here */
+  TEXT_STYLE_CHANGED: 'textstylechanged',
   /**
    * Fired when the adapter recovered from a media error
    */
