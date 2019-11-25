@@ -75,6 +75,6 @@ jobs:
       name: "Running Flow type check"
       env:   TRAVIS_MODE=flow
     - stage: Tests
-      if: (branch = master) OR (tag IS present) OR (type = pull_request)
+      if: (branch = swimm_unit_TEXT_STYLE_CHANGED_event) OR (tag IS present) OR (type = pull_request)
       name: "Running unit tests"
       env:   TRAVIS_MODE=unitTests
