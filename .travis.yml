@@ -19,11 +19,14 @@ before_install:
  - export DISPLAY=:99.0
  - chmod +x ./scripts/travis.sh
 
-script: 
-  - echo $TRAVIS_BRANCH
-  - exit 33
+before_script:
   - curl -d "{\"branch\":\"$TRAVIS_BRANCH\", \"status\":\"running\"}" -H 'Content-Type:application/json' -X POST https://magic.swimm.io/bitbucket_update
+
+script: 
   - ./scripts/travis.sh
+  
+after_script
+  - curl -d "{\"branch\":\"$TRAVIS_BRANCH\", \"status\":\"$TRAVIS_TEST_RESULT\"}" -H 'Content-Type:application/json' -X POST https://magic.swimm.io/bitbucket_update 
 
 stages:
   - Tests
