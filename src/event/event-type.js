@@ -27,6 +27,8 @@ const Html5EventType: PKEventTypes = {
    * Fires when the current playlist is ended
    */
   ENDED: 'ended',
+
+  TEXT_STYLE_CHANGED:'textstylechanged',
   /**
    * Fires when an error occurred during the loading of an audio/video
    */
