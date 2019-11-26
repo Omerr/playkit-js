@@ -232,6 +232,7 @@ const CustomEventType: PKEventTypes = {
    * Fired when a fragment or segment is done loading successfully
    */
   FRAG_LOADED: 'fragloaded',
+  TEXT_STYLE_CHANGE: 'textstylechange',
   /**
    * Fired when a manifest is done loading successfully
    */
