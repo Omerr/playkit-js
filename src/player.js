@@ -1202,8 +1202,8 @@ export default class Player extends FakeEventTarget {
         this._engine.resetAllCues();
         this._externalCaptionsHandler.resetAllCues();
         this._updateTextDisplay(this._activeTextCues);
-        this.dispatchEvent(new FakeEvent(CustomEventType.TEXT_STYLE_CHANGED));
       }
+      this.dispatchEvent(new FakeEvent(CustomEventType.TEXT_STYLE_CHANGED));
       
     } catch (e) {
       Player._logger.error(e.message);
