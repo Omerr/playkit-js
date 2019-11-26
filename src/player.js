@@ -1187,7 +1187,6 @@ export default class Player extends FakeEventTarget {
       Utils.Dom.addClassName(element, this._playerId);
       Utils.Dom.addClassName(element, SUBTITLES_STYLE_CLASS_NAME);
       Utils.Dom.appendChild(document.head, element);
-      this.dispatchEvent(new FakeEvent(CustomEventType.TEXT_STYLE_CHANGE));
     }
     let sheet = element.sheet;
 
@@ -1203,6 +1202,7 @@ export default class Player extends FakeEventTarget {
         this._engine.resetAllCues();
         this._externalCaptionsHandler.resetAllCues();
         this._updateTextDisplay(this._activeTextCues);
+        this.dispatchEvent(new FakeEvent(CustomEventType.TEXT_STYLE_CHANGE));
       }
       
     } catch (e) {
